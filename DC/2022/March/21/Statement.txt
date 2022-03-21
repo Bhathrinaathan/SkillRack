@@ -1,0 +1,33 @@
+function removeReversedWords
+
+The function/method removeReversedWords accepts two arguments str1 and str2 representing two string values. 
+The string str1 contains multiple words separated by a space. The string str2 contains exactly one word.
+The function/method removeReversedWords must remove all the occurrences of the word str2 and its reverse in the string str1. 
+Then the function must return the revised string as a new string. If the string becomes empty, then the function must return -1 as a string.
+Your task is to implement the function removeReversedWords so that the program runs successfully.
+
+IMPORTANT: Do not write the main() function as it is already defined.
+
+Example 
+Input/Output 1:
+
+Input:
+nightingale lion tiger mosquito noil cockroach lion fox panda lizard
+lion
+
+Output:
+nightingale tiger mosquito cockroach fox panda lizard
+
+Explanation:
+After removing all the occurrences of "lion" and its reverse in the first string, the string becomes
+nightingale tiger mosquito cockroach fox panda lizard
+
+Example 
+Input/Output 2:
+
+Input:
+monkey monkey yeknom monkey yeknom
+yeknom
+
+Output:
+-1

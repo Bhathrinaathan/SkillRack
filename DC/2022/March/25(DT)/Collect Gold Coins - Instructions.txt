@@ -1,0 +1,71 @@
+Collect Gold Coins - Instructions
+
+      In a room, the RxC boxes are arranged as a matrix where each box contains gold coins. A set of instructions are given to a boy to pick the boxes in the room. The initial position of the boy is (1, 1). He can move around the room based on the following instructions.
+        - If it is N, then he can move 1 step towards North.
+        - If it is E, then he can move 1 step towards East.
+        - If it is W, then he can move 1 step towards West.
+        - If it is S, then he can move 1 step towards South.
+      The boy is allowed to take gold coins from the room based on the following conditions.
+        - He must take all the coins out of the box when he picks a box the first time.
+        - Whenever he picks up the same box a second time or more, he must put 1 gold coin in that box using the same gold coins that he collected from the same box. If there are no coins to put in the box when picking it multiple times, then he just ignores the box.
+      
+      The program must accept an integer matrix of size RxC representing the RxC boxes and a string S representing the set of instructions as the input. The program must print the total number of gold coins he can collect as the output.
+      
+Note:
+  The given instructions are always valid (i.e., there is no instruction that will take him out of the room).
+  
+ Boundary Condition(s):
+ 2 <= R, C <= 25
+ 1 <= Number of gold coins in each box <= 100
+ 1 <= Length of S <= 50
+ 
+Input Format:
+  The first line contains R and C separated by a space.
+  The next R lines, each contains C integers separated by a space.
+  The R+2nd line contains S.
+Output Format:
+  The first line contains an integer representing the total number of gold coins he can collect.
+
+Example Input/Output 1:
+Input:
+3 3
+5 4 6
+2 5 1
+1 2 3
+EESWNW
+Output:
+19
+
+Explanation:
+Initially, he collects 5 gold coins from the box (1, 1).
+E -> He collects 4 gold coins from the box (1, 2).
+E -> He collects 6 gold coins from the box (1, 3).
+S -> He collects 1 gold coin from the box (2, 3).
+W -> He collects 5 gold coins from the box (2, 2).
+N -> He puts 1 gold coin in the box (1, 2).
+W -> He puts 1 gold coin in the box (1, 1).
+The total gold coins = 5 + 4 + 6 + 1 + 5 - 1 - 1 = 19.
+So 19 is printed as the output.
+
+Example Input/Output 2:
+Input:
+3 3
+5 4 6
+2 5 1
+1 2 3
+EESWNESSNN
+Output:20
+Explanation:
+Initially, he collects 5 gold coins from the box (1, 1).
+E -> He collects 4 gold coins from the box (1, 2).
+E -> He collects 6 gold coins from the box (1, 3).
+S -> He collects 1 gold coin from the box (2, 3).
+W -> He collects 5 gold coins from the box (2, 2).
+N -> He puts 1 gold coin in the box (1, 2).
+E -> He puts 1 gold coin in the box (1, 3).
+S -> He puts 1 gold coin in the box (2, 3).
+S -> He collects 3 gold coins from the box (3, 3).
+N -> He just ignores the box (2, 3) as there are no coins to put in that box.
+N -> He puts 1 gold coin in the box (1, 3).
+The total gold coins = 5 + 4 + 6 + 1 + 5 - 1 - 1 - 1 + 3 + 0 - 1 = 20.
+So 20 is printed as the output.

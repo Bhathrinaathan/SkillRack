@@ -1,4 +1,4 @@
-// 7 Hidden test cases passed and 6 failed
+// 11 Hidden test cases passed and 2 failed
 #include<stdio.h>
 #include<stdlib.h>
 int shipsInsidePort(int R,int C,char port[][C])

@@ -41,14 +41,14 @@ int main()
                 for (row=0;row<R;row++)
                 {
                     
-                    if (port[row][col]=='#' && port[row+1][col]=='#' && row<R-1)
+                    if (port[row][col]=='#' && port[row+1][col]=='#')
                     {
                         if (NoObstacleInWayCol(R,C,port,row,col))
                         {
                             port[row][col]='*';port[row+1][col]='*';break;
                         }
                     }
-                    else if ( (port[row][col]=='#' && port[row][col+1]!='#' && port[row][col-1]!='#') || (col==C-1 && port[row][col]=='#'))
+                    else if (port[row][col]=='#' && port[row][col+1]!='#' && port[row][col-1]!='#')
                     {
                         if (NoObstacleInWayCol(R,C,port,row,col))
                         {
@@ -64,11 +64,13 @@ int main()
             {
                 for (col=0;col<C;col++)
                 {
-                    if (port[row][col]=='#' && port[row][col+1]=='#' && col<C-1)
+                    if (port[row][col]=='#' && port[row][col+1]=='#')
                     {
                         if (NoObstacleInWayRow(R,C,port,row,col))
-                        {   port[row][col]='*';port[row][col+1]='*';break;   }
-                    }else if ((port[row][col]=='#' && port[row+1][col]!='#' && port[row-1][col]!='#') || (row==R-1 && port[row][col]=='#'))
+                        {   
+                            port[row][col]='*';port[row][col+1]='*';break;  
+                        }
+                    }else if (port[row][col]=='#' && port[row+1][col]!='#' && port[row-1][col]!='#')
                     {
                         if (NoObstacleInWayRow(R,C,port,row,col))
                         {   port[row][col]='*';break;}

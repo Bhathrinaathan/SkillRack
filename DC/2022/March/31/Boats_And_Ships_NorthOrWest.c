@@ -1,4 +1,3 @@
-// 11 Hidden test cases passed and 2 failed
 #include<stdio.h>
 #include<stdlib.h>
 int shipsInsidePort(int R,int C,char port[][C])
@@ -26,7 +25,7 @@ int NoObstacleInWayRow(int R,int C,char port[][C],int r,int c)
 }
 int main()
 {
-    int R,C,row,col,minutes=1;
+    int R,C,row,col,minutes=0;
     scanf("%d %d",&R,&C);
     char port[R][C];
     for (row=0;row<R;row++)
@@ -34,7 +33,7 @@ int main()
             scanf(" %c",&port[row][col]);
     while (shipsInsidePort(R,C,port)>=1)
     {
-        if (minutes%2==1)
+        if (minutes%2==0)
         {
             for (col=0;col<C;col++)
             {
@@ -47,18 +46,17 @@ int main()
                         {
                             port[row][col]='*';port[row+1][col]='*';break;
                         }
+                        row++;
                     }
-                    else if (port[row][col]=='#' && port[row][col+1]!='#' && port[row][col-1]!='#')
+                    else if ((port[row][col]=='#' && port[row][col+1]!='#' && port[row][col-1]!='#'))
                     {
                         if (NoObstacleInWayCol(R,C,port,row,col))
-                        {
-                            port[row][col]='*';break;
-                        }
+                        {   port[row][col]='*';break;  }
                     }
                 }
             }
         }
-        else if (minutes%2==0)
+        else if (minutes%2==1)
         {
             for (row=0;row<R;row++)
             {
@@ -67,9 +65,8 @@ int main()
                     if (port[row][col]=='#' && port[row][col+1]=='#')
                     {
                         if (NoObstacleInWayRow(R,C,port,row,col))
-                        {   
-                            port[row][col]='*';port[row][col+1]='*';break;  
-                        }
+                        {   port[row][col]='*';port[row][col+1]='*';break;   }
+                        col++;
                     }else if (port[row][col]=='#' && port[row+1][col]!='#' && port[row-1][col]!='#')
                     {
                         if (NoObstacleInWayRow(R,C,port,row,col))
@@ -80,5 +77,5 @@ int main()
         }
         minutes++;
     }
-    printf("%d ",minutes - 1);
+    printf("%d ",minutes);
 }

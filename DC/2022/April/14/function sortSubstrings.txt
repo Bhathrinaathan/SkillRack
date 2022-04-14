@@ -1,0 +1,36 @@
+function sortSubstrings
+The function/method sortSubstrings accepts two arguments str and K. The str represents a string value whose length is always divisible by the integer K.
+
+The function/method sortSubstrings must split the given string into substrings of equal length K. Then the function must sort the substrings and return them.
+
+Your task is to implement the function sortSubstrings so that the program runs successfully.
+
+The following structure is used to represent the boundedArray and is already defined in the default code (Do not write this definition again in your code).
+typedef struct BoundedArray
+{
+    int SIZE;
+    char **words;
+} boundedArray;
+
+IMPORTANT: Do not write the main() function as it is already defined.
+
+Example Input/Output 1:
+Input:
+skillrack
+3
+
+Output:
+ack llr ski
+
+Explanation:
+Here K = 3.
+After dividing the given string skillrack into substrings of length 3, the substrings are ski, llr and ack.
+So they are printed in sorted order.
+
+Example Input/Output 2:
+Input:
+internationalairport
+4
+
+Output:
+inte iona lair port rnat

@@ -1,0 +1,35 @@
+function findBinarySum
+The function/method findBinarySum accepts two arguments N and binValues. The binValues represents a 2-D array of characters denoting the N binary string values.
+
+The function/method findBinarySum must return a string containing the binary sum of the given N binary string values.
+
+Your task is to implement the function findBinarySum so that the program runs successfully.
+
+IMPORTANT: Do not write the main() function as it is already defined.
+
+Boundary Condition(s):
+2 <= N <= 100
+1 <= Length of each string <= 100
+
+Example Input/Output 1:
+Input:
+2
+10001
+11001
+
+Output:
+101010
+
+Explanation:
+Here N=2 and the given 2 binary string values are 10001 and 11001.
+The sum of two binary string values 10001 and 11001 is 101010.
+
+Example Input/Output 2:
+Input:
+3
+1000
+111
+100010
+
+Output:
+110001

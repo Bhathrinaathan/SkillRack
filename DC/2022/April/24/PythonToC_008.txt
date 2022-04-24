@@ -1,0 +1,8 @@
+Python - C 008
+Please convert the following python code to c so that the c program executes successfully passing the test cases.
+
+num1, num2 = map(int, input().strip().split())
+K = int(input())
+firstVal = bin(num1).replace("0b", "")
+secondVal = bin(num2).replace("0b","")
+print(int(firstVal[:K]+secondVal[len(secondVal)-K:],2))

@@ -1,0 +1,54 @@
+Sanath rsean's encryption quest!
+  One day sean's friend john wanted him to encrypt a few messages that were to be sent via a telegram group, so that everyone could see the message, but 
+only those special people who knew decryption can actually understand it. help sean write a code that take input values of the type of encryption, a key, and a message to be encrypted that had something to do with the key.input format:first line containing the type of encryption x.second line containing the
+key k.third line containing the message m.
+
+output format:
+the first line contains the encrypted message.
+
+Note:
+  The encryption process is based on the simple logic of addition, that is simply adding the value of the key(/modified key) to the characters of the message to be encrypted. only upper case alphabets need to be considered.x is a number -1 or 0 or 1,\
+    a) -1 denotes the decreasing value of the key
+    b) 0 denotes the constant value of the key
+    c) 1 denotes the increasing value of the keyd) in case of invalid input value of x simply display “invalid input”.
+ 
+if the input value of k is less than or equal to 0, make the initial value of k as 1
+Boundary conditions:
+The maximum length of the message m is 200 and it's minimum length is 1
+
+example input/output 01:
+input:
+1 
+2
+summer
+
+output:
+uxqrky
+
+explanation: every time the key is used on a character its value is incremented by 1
+
+example input/output 02:
+input:
+-1
+6
+holiday
+output:
+ntplfby
+explanation: every time the key is used on a character its value is decremented by 1
+example input/output 03:
+
+input:
+0
+2
+entertainment
+output:
+gpvgtvckpogpv
+example input/output04:
+input:
+-1
+1
+zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+output:
+azyxwvutsrqponmlkjihgfedcbazyxwvutsrqponmlkjihgfedcbazyxwvutsrqponmlkjihgfedcbazyxwvutmax 
+
+execution time limit: 3000 millisecs
